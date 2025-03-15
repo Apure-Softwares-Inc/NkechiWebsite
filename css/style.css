@@ -1,0 +1,1269 @@
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --silver: #fcfdfd;
+    --Obsidian: #011222;
+}
+
+body {
+    padding: 0;
+    background-color: var(--silver);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Navigation Bar */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.navbar {
+    background-color: var(--silver); /* Light background */
+    box-shadow: 0 1px 4px var(--Obsidian); /* Optional: Add a shadow for better visibility */
+    height: 80px;
+    position: fixed;
+    top: 0;
+    font-family: sans-serif;
+    pointer-events: auto;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other content */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Brand Name */
+.navbar .navbar-brand {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--Obsidian);
+    padding-left: 50px;
+    justify-content: start;
+}
+
+/* Default Desktop Navigation */
+.navbar .navbar-nav {
+    padding-right: 50px;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.navbar-collapse {
+    justify-content: end;
+}
+
+/* Navigation Links */
+.navbar-nav .nav-link {
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: var(--Obsidian);
+    margin-left: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover, .navbar-brand:hover {
+    color: #e7131a;
+    cursor: pointer;
+} 
+
+/* .navbar-nav .nav-link:active {
+    color: #d93025;
+    cursor: pointer;
+    text-decoration: underline;
+} */
+
+/* Hamburger Menu - Default Hidden */
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--Obsidian);
+    cursor: pointer;
+}
+
+/* Responsive Navigation Bar */
+/*
+@media screen and (max-width: 1199.98px) and (orientation: portrait) {
+    .navbar-nav {
+        text-align: center;
+    }
+}
+*/
+
+@media screen and (max-width: 768px) {
+    .navbar .navbar-brand {
+        padding: 20px;
+    }
+
+    .navbar .navbar-nav {
+        padding: 20px;
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        height: 60px;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        margin-left: 5px;
+    }
+}
+
+/* Responsive Design Hamburger Menu */
+@media screen and (max-width: 1024px) { /* Tablets & Mobile */
+    .navbar {
+        height: auto;
+        flex-direction: row;
+        padding: 15px 30px;
+    }
+
+    /* Hamburger Menu Appears */
+    .navbar-toggler {
+        display: block;
+    }
+
+    /* Hide Nav Items Initially */
+    .navbar-collapse {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    /* Show Menu When Open */
+    .navbar-collapse.open {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/* Main Section */
+main {
+    width: 100%;
+    height: 100vh;
+    flex: 1; /* Allows the main content to grow and fill the available space */
+}
+
+/* hero section */
+#welcome-section {
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    padding: 20px; /* Add some padding for spacing */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #F8F8F8
+}
+
+#welcome-section #intro {
+    width: 100%;
+    padding-top: 4rem;
+    padding-left: 4rem;
+    padding-bottom: 4rem;
+    padding-right: 0;
+    height: 80vh;
+    margin-top: 4rem;
+}
+
+.animated-text{
+    font-size: 3.7rem;
+    white-space: nowrap; /* Prevents text from breaking */
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Cursor Effect */
+.cursor {
+    font-size: 5.0rem;
+    color: var(--Obsidian);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#intro-image {
+    max-width: 100%;
+    height: auto;
+    padding-right: 2rem;
+    border-radius: 20px;
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+}
+
+#intro-name {
+    text-align: left;
+    padding: 2rem;
+}
+
+#intro-serv {
+    text-align: left;
+    padding-left: 2rem;
+    padding-top: 4rem;
+}
+
+
+/* Responsive Hero Section */
+@media screen and (max-width: 1199.98px) and (orientation: portrait) {
+    #welcome-section #intro {
+        padding-left: 2rem;
+        padding-top: 2rem;
+    }
+
+    .animated-text {
+        font-size: 3.0rem;
+    }
+
+    .cursor {
+        font-size: 4.0rem;
+    }
+
+    #intro-name {
+        padding: 1rem;
+    }
+
+    #intro-serv {
+        padding-left: 1rem;
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #welcome-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #welcome-section #intro {
+        padding-left: 1rem;
+        padding-top: 1rem;
+        height: auto;
+    }
+
+    .animated-text {
+        font-size: 2.5rem;
+    }
+
+    .cursor {
+        font-size: 3.5rem;
+    }
+
+    #intro-name {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    #intro-serv {
+        text-align: center;
+        padding-left: 1rem;
+        padding-top: 1rem;
+    }
+
+    #intro-image {
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .animated-text {
+        font-size: 2.0rem;
+    }
+
+    .cursor {
+        font-size: 3.0rem;
+    }
+
+    #intro-name {
+        font-size: 3.5rem;
+    }
+
+    #intro-serv {
+        font-size: 1.3rem;
+        padding-right: 1rem;
+    }
+
+    #welcome-section #intro {
+        padding: 1rem;
+    }
+}
+
+
+/* Work section */
+#work {
+    padding-top: 70px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#work-section {
+    height: 55vh; 
+    display: flex;
+    padding: 50px; /* Add some padding for spacing */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Obsidian);
+    color: var(--silver);
+    border-radius: 20px;
+    color: var(--silver);
+    box-shadow: 5px 5px 5px #696969;
+    margin-bottom: 70px;
+}
+
+#work-section #project-name {
+    width: 100%;
+    padding: 4rem;
+    height: 100%;
+    color: var(--silver);
+    text-align: left;
+}
+
+#project {
+    color: var(--silver);
+}
+
+#project-image {
+    max-width: 100%;
+    height: 50vh;
+    padding-right: 2rem;
+    color: var(--silver);
+    object-fit: contain; /* Ensures the whole image fits inside without cropping */
+}
+
+#project-sum {
+    text-align: left;
+    padding-left: 4rem;
+    color: var(--silver);
+}
+
+
+/* Responsive Work Section */
+@media screen and (max-width: 1199.98px) and (orientation: portrait) {
+    #work {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #work-section {
+        height: auto;
+        padding: 30px;
+    }
+
+    #work-section #project-name {
+        padding: 2rem;
+    }
+
+    #project-sum {
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #work {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #work-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #work-section #project-name {
+        text-align: center;
+        padding: 1rem;
+        width: 100vw;
+    }
+
+    #project-sum {
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        width: 100vw;
+    }
+
+    #project-image {
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #work {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #work-section {
+        padding: 20px;
+    }
+
+    #work-section #project-name {
+        font-size: 2.0rem;
+    }
+
+    #project-sum {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Text styling */
+main h1 {
+    font-size: 6.5rem;
+    font-family: Montserrat, Merriweather;
+    color: var(--Obsidian);
+    line-height: 1.4em;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-decoration: none;
+}
+
+main h2 {
+    font-size: 4.2rem;
+    font-family: Montserrat, Merriweather;
+    color: var(--Obsidian);
+    line-height: 1.4em;
+    font-weight: 500;
+    letter-spacing: 0em;
+}
+
+main h3 {
+    font-size: 2.8rem;
+    font-family: Montserrat, Merriweather;
+    color: var(--Obsidian);
+    line-height: 1.4em;
+    font-weight: 500;
+    letter-spacing: 0em;
+}
+
+main h4 {
+    font-size: 1.6rem;
+    font-family: Montserrat, Merriweather;
+    color: var(--Obsidian);
+    line-height: 1.4em;
+    font-weight: 700;
+    letter-spacing: 0em;
+}
+
+main p {
+    font-family: Roboto;
+    color: var(--Obsidian);
+    line-height: 3em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-size: 1.2rem;
+    line-height: 1.8em;
+}
+
+main button {
+    font-family: Helvetica, sans-serif;
+    color: var(--Obsidian);
+    line-height: 3em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-size: 1.2rem;
+}
+
+
+/* Services styling */
+#services {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 120px;
+    padding-top: 70px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #F8F8F8;
+}
+
+#services-intro {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 4rem;
+}
+
+#services-topic {
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+
+#services-section {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#services-box {
+    width: 100%;
+    padding: 3rem;
+    height: 450px;
+    border: 1px solid var(--Obsidian);
+    border-radius: 20px;
+    background-color: #c8e7ef;
+}
+
+#services-name {
+    text-align: left;
+    padding-bottom: 2rem;
+}
+
+
+/* Responsive Services Section */
+@media screen and (max-width: 1199.98px) and (orientation: portrait) {
+    #services {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #services-box {
+        padding: 2rem;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #services {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #services-section {
+        flex-direction: column;
+    }
+
+    #services-box {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    #services-box > ul {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #services {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #services-box {
+        padding: 1rem;
+        text-align: left;
+    }
+
+    #services-box > ul {
+        padding: 1rem;
+    }
+}
+
+
+/* Footer styling */
+footer {
+    background-color: var(--Obsidian);
+    color: var(--silver);
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: auto; /* Ensures the footer stays at the bottom */
+    text-align: left;
+    width: 100%;
+    margin: 0;
+}
+
+#connect {
+    padding-bottom: 50px; 
+}
+
+#thank1 {
+    padding-bottom: 10px;
+    font-size: 2.8rem;
+    font-family: Montserrat, Merriweather;
+    line-height: 1.4em;
+    font-weight: 500;
+    letter-spacing: 0em;
+}
+
+#thank2 {
+    font-family: Roboto;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-size: 1.4rem;
+    line-height: 1.8em;
+}
+
+#social-links {
+    padding-bottom: 100px;
+}
+
+#social {
+    font-family: Roboto;
+    font-weight: 100;
+    letter-spacing: 0em;
+    font-size: 0.9rem;
+    line-height: 1.8em;
+}
+
+#rights {
+    font-family: Roboto;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    line-height: 1.8em;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+
+/* Responsive Footer Section */
+@media screen and (max-width: 1199.98px) and (orientation: portrait) {
+    footer {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #thank1 {
+        font-size: 2.0rem;
+    }
+
+    #thank2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #thank1 {
+        font-size: 1.8rem;
+    }
+
+    #thank2 {
+        font-size: 1.0rem;
+    }
+
+    #social-links {
+        padding-bottom: 50px;
+        font-size: 0.7rem;
+    }
+
+    #socials {
+        margin-bottom: 20px;
+    }
+
+    #rights {
+        font-size: 0.6rem;
+    }
+}
+
+
+
+
+/* Customer Service App Hero Section */
+#cust-hero {
+    margin-top: 80px;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #F8F8F8
+}
+
+#hero-image1 {
+    height: 70vh; 
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+#hero-image2 {
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover; 
+}
+
+#hero-name {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Responsive Hero Section */
+@media screen and (max-width: 1199.98px) and (orientation: portrait) {
+    #cust-hero {
+        margin-top: 60px;
+        display: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #cust-hero {
+        flex-direction: column;
+        text-align: center;
+        min-height: 100%;
+        width: 100%;
+        padding-bottom: 100px;
+    }
+
+    #hero-image1 {
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding-top: 100px;
+        padding-bottom: 0;
+        padding-left: 130px;
+        padding-right: 100px;
+    }
+
+    #hero-name {
+        text-align: center;
+        font-size: 4.0rem;
+    }
+
+    #hero-image2 {
+       width: 100%;
+       height: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #hero-name {
+        font-size: 2.3rem;
+        padding: 10px;
+    }
+
+    #hero-image1 {
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
+        padding-bottom: 0;
+        padding-left: 60px;
+        padding-right: 30px;
+    }
+    
+    #cust-hero {
+        padding-bottom: 10px;
+    }
+}
+
+
+/* Customer Service App Brief Section */
+#project1 {
+    padding: 70px;
+    width: 100%;
+    text-align: left;
+}
+
+#brief1 {
+    height: auto;
+    width: 100%;
+}
+
+#project1-name {
+    width: 100%;
+    padding-bottom: 2rem;
+    padding-top: 4rem;
+    height: 100%;
+}
+
+#brief1-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    align-items: center;
+    justify-content: center;
+}
+
+#project1-sum {
+    text-align: left;
+    padding-bottom: 30px;
+}
+
+
+/* Responsive Customer Service App Brief Section */
+@media screen and (max-width: 1199.98px) and (orientation: portrait) {
+    #project1 {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #project1-name {
+        text-align: center;
+    }
+}
+/*
+    #work-section {
+        height: auto;
+        padding: 30px;
+    }
+
+    #work-section #project-name {
+        padding: 2rem;
+    }
+
+    #project-sum {
+        padding-left: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    #work {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #work-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #work-section #project-name {
+        text-align: center;
+        padding: 1rem;
+        width: 100vw;
+    }
+
+    #project-sum {
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        width: 100vw;
+    }
+
+    #project-image {
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+}
+*/
+
+@media screen and (max-width: 480px) {
+    /* #brief1a {
+        font-size: 2.5rem;
+    } */
+
+    #project1 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #work-section {
+        padding: 20px;
+    }
+
+    #project1-name {
+        font-size: 2.0rem;
+    }
+
+    #project1-sum {
+        font-size: 1.0rem;
+    }
+
+    #project1-j {
+        font-size: 1.2rem;
+    }
+
+    #sum1 {
+        font-size: 1.0rem;
+    }
+}
+
+
+/* Customer Service App Challenges Section */
+#challenges1 {
+    padding: 70px;
+    width: 100%;
+    text-align: left;
+}
+
+#challenge1 {
+    height: auto;
+    width: 100%;
+}
+
+#challenge1a {
+    width: 100%;
+    padding-bottom: 4rem;
+    height: 100%;
+}
+
+#problem {
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+#problems {
+    text-align: left;
+    padding-left: 10px;
+    width: 100%;
+    white-space: wrap;
+}
+
+main hr {
+    border: 1px solid #c8e7ef;
+}
+
+
+/* Responsive Customer Service App Project Section */
+@media screen and (max-width: 1199.98px) and (orientation: portrait) {
+    #challenges1 {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #problems {
+        white-space: wrap;
+    }
+
+    #challenge1 {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+}
+/*
+    #work-section {
+        height: auto;
+        padding: 30px;
+    }
+
+    #work-section #project-name {
+        padding: 2rem;
+    }
+
+    #project-sum {
+        padding-left: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    #work {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #work-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #work-section #project-name {
+        text-align: center;
+        padding: 1rem;
+        width: 100vw;
+    }
+
+    #project-sum {
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        width: 100vw;
+    }
+
+    #project-image {
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+}
+*/
+
+@media screen and (max-width: 480px) {
+    #challenges1 {
+        padding-left: 20px;
+    }
+
+    #problem {
+        font-size: 1.2rem;
+    }
+
+    #problems {
+        font-size: 1.0rem;
+        white-space: wrap;
+    }
+
+    #question {
+        padding-left: 25px;
+    }
+}
+
+
+
+#vid {
+    max-width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    object-fit: cover; /* Crop video to fit container */
+}
+
+
+#tabs .tab-btn {
+    color: var(--Obsidian);
+    transition: background-color 0.3s ease; /* Smooth transition */
+    width: 150px; 
+    height: 100px; 
+    margin-right: 10px;
+}
+
+#tabs .tab-btn:hover {
+    background-color: #b5dce7; /* Hover background color */
+}
+
+#tabs .tab-btn.active {
+    background-color: #c8e7ef;
+    color: var(--Obsidian);
+}
+
+.tabcontent {
+    display: none;
+}
+
+.tabs {
+    display: flex;
+}
+
+
+/* Responsive Buttons and Tabs Section */
+@media screen and (max-width: 1199.98px) and (orientation: portrait) {
+    #tabs .tab-btn {
+        width: 89px; 
+        height: 70px; 
+        margin-right: 4px;
+        margin-bottom: 8px;
+        text-align: center;
+        font-size: 0.65rem;
+        padding: 0;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    #tabs .tab-btn {
+        width: 38px; 
+        height: 35px; 
+        margin-right: 2px;
+        margin-bottom: 5px;
+        font-size: 0.3rem;
+        padding: 0;
+    }
+
+    #btn {
+        padding-right: 15px;
+    }
+
+    #challenge1a {
+        padding-bottom: 2rem;
+        font-size: 2.0rem;
+    }
+
+    #problem {
+        text-align: left;
+        padding-bottom: 20px;
+    }
+
+    #challenges1 {
+        padding: 0;
+    }
+
+    #problems {
+        white-space: wrap;
+    }
+
+    #challenge1 {
+        padding-top: 0;
+        padding-left: 20px;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    #brief1-image {
+        padding-right: 25px;
+    }
+
+    #vid {
+        padding-right: 25px;
+    }
+}
+
+
+
+
+/* About Section */
+.card {
+    max-width: 100%; 
+    height: auto;
+}
+
+#Abta {
+    padding: 120px;
+}
+
+#Abt-image {
+    object-fit: cover; 
+    padding: 0; 
+    height: 482px; 
+    width: 400px; 
+    border-radius: 20px;
+}
+
+#Abt {
+    font-weight: normal; 
+    font-size: 1.5rem; 
+    line-height: 1.4em;
+}
+
+#Abt-image1 {
+    object-fit: cover; 
+    padding: 0; 
+    height: 298px; 
+    width: 389px; 
+    border-radius: 20px;
+}
+
+#Abtq {
+    margin-bottom: 60px;
+}
+
+
+/* Responsive About Section */
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    .card {
+        padding: 0;
+        margin-bottom: 3rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #rows {
+        align-items: center;
+        flex-direction: column-reverse; /* Flip text and image */
+        text-align: center;
+    }
+    
+    #Abta {
+        justify-content: center;
+        flex-direction: column;
+        padding-right: 50px;
+        padding-left: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-top: 80px;
+        align-items: center;
+    }
+
+    #Abt-image {
+        height: auto; 
+        width: 90%; /* Adjust width for better fit */
+        max-width: 400px;
+        margin-top: 20px;
+    }
+    
+    #Abt {
+        text-align: center;
+    }
+
+    #Abt-image1 {  
+        height: 139.2px; 
+        width: 174px;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    #Abtq {
+        margin-bottom: 30px;
+    }
+
+    #Abtc {
+        justify-content: center;
+    }
+
+    #Abtr {
+        flex-wrap: nowrap;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #Abta {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 80px;
+    }
+
+    #Abt {
+        font-size: 1.0rem;
+    }
+
+    #Abt-image1 {  
+        height: 87.6px; 
+        width: 105px;
+        max-width: 250px;
+        margin: 0 auto; 
+        border-radius: 10px;
+    }
+}
