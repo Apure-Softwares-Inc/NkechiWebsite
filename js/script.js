@@ -16,7 +16,7 @@ const texts = [
     "a tech startup co-founder",
     "a user researcher",
     "a lead scientist",
-    "an instructor",
+    "an assistant professor",
     "a Ph.D. nerd",
     "an anime fan",
     "a senior product designer"
