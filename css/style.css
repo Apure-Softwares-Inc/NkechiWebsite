@@ -341,7 +341,6 @@ main {
     align-items: center;
     justify-content: center;
     background-color: var(--Obsidian);
-    color: var(--silver);
     border-radius: 20px;
     color: var(--silver);
     box-shadow: 5px 5px 5px #696969;
@@ -504,7 +503,7 @@ main button {
 }
 
 
-/* Services styling */
+/* Services Homepage styling */
 #services {
     padding-left: 70px;
     padding-right: 70px;
@@ -520,46 +519,119 @@ main button {
     width: 100%;
     height: 100%;
     padding-bottom: 4rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#services-station {
+    padding: 50px;
+    background-color: #c8e7ef;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #696969;
 }
 
 #services-topic {
     width: 100%;
     height: 100%;
     font-weight: bold;
+    margin-bottom: 70px;
 }
 
 #services-section {
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+/* Services Section - Reuse hero styles with additions */
+#serv-section {
+    min-height: 50vh;
     display: flex;
+    padding: 20px;
     width: 100%;
     align-items: center;
     justify-content: center;
 }
 
-#services-box {
-    width: 100%;
-    padding: 3rem;
-    height: 450px;
-    border: 1px solid var(--Obsidian);
-    border-radius: 20px;
-    background-color: #c8e7ef;
+#serv-section #serv-intro {
+    max-width: 100%;
+    padding: 4rem 4rem 4rem 4rem;
+    height: 60vh;
+    margin-top: 4rem;
 }
 
-#services-name {
+#serv-title {
+    text-align: center;
+    padding: 2rem;
+    font-weight: 700;
+}
+
+#serv-subtitle {
+    text-align: center;
+    padding-left: 2rem;
+    padding-top: 4rem;
+}
+
+#servs {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 120px;
+    padding-top: 70px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#servs-intro {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 4rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#servs-station {
+    padding: 50px;
+    background-color: var(--silver);
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #696969;
+}
+
+#servs-topic {
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    margin-bottom: 30px;
     text-align: left;
-    padding-bottom: 2rem;
+    padding-left: 10px;
+}
+
+#servs-section {
+    align-items: center;
+    justify-content: center;
+    text-align: left;
 }
 
 
 /* Responsive Services Section */
 @media screen and (max-width: 1199.98px) and (orientation: portrait) {
+
     #services {
         padding-left: 50px;
         padding-right: 50px;
     }
 
-    #services-box {
-        padding: 2rem;
-        height: auto;
+    #services-station {
+        padding: 20px;
+        background-color: #c8e7ef;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px #696969;
+    }
+    
+    #services-section {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }
 
@@ -570,16 +642,66 @@ main button {
     }
 
     #services-section {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
-    #services-box {
-        margin-bottom: 20px;
-        text-align: left;
+    /* Services Section - Reuse hero styles with additions */
+
+    #services-text {
+        white-space: wrap;
+        padding-bottom: 30px;
     }
 
-    #services-box > ul {
+    #serv-section {
+        min-height: 40vh;
+        display: flex;
+        padding: 20px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #serv-section #serv-intro {
+        max-width: 100%;
+        padding: 1rem 1rem 1rem 1rem;
+        height: 40vh;
+        margin-top: 5rem;
+    }
+
+    #serv-title {
+        text-align: center;
         padding: 1rem;
+        font-weight: 700;
+        height: 200px;
+        line-height: 0.5em;
+    }
+
+    #serv-subtitle {
+        text-align: center;
+        margin-top: 4rem;
+        padding: 0;
+    }
+
+    #servs {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 70px;
+        padding-top: 70px;
+    }
+
+    #servs-station {
+        padding: 20px;
+    }
+
+    #servs-topic {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    #servs-section {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 }
 
@@ -589,15 +711,59 @@ main button {
         padding-right: 10px;
     }
 
-    #services-box {
-        padding: 1rem;
-        text-align: left;
+    #services-topic {
+        font-size: 2.2rem;
     }
 
-    #services-box > ul {
-        padding: 1rem;
+    /* Services Section - Reuse hero styles with additions */
+    #serv-section {
+        min-height: 40vh;
+        padding: 10px;
     }
-}
+
+    #serv-section #serv-intro {
+        max-width: 100%;
+        padding: 1rem 1rem 1rem 1rem;
+        height: 40vh;
+        margin-top: 4rem;
+    }
+
+    #serv-title {
+        text-align: center;
+        padding: 1rem;
+        font-weight: 700;
+        height: 200px;
+        line-height: 0.3em;
+    }
+
+    #serv-subtitle {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+    }
+
+    #servs {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 70px;
+        padding-top: 70px;
+    }
+
+    #servs-station {
+        padding: 10px;
+    }
+
+    #servs-topic {
+        text-align: center;
+        padding-left: 0;
+        font-size: 2.2rem;
+    }
+
+    #servs-section {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+} 
 
 
 /* Footer styling */
@@ -892,10 +1058,6 @@ footer {
 
     .fa-3x {
         font-size: 2em;
-    }
-
-    #socials {
-        margin-bottom: 0;
     }
 
     #Connect5 {
