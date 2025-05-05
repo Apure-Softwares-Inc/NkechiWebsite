@@ -164,3 +164,38 @@ function openTab(tabName) {
 document.addEventListener("DOMContentLoaded", () => {
     openTab("tab1");
 });
+
+
+
+// Apure Cube Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Fade in the cube elements
+    const luxuryBg = document.querySelector('.luxury-bg');
+    const cubeContainer = document.querySelector('.cube-container');
+    const cube = document.querySelector('.cube');
+    
+    luxuryBg.style.opacity = '1';
+    cubeContainer.style.opacity = '1';
+
+    let currentStep = 0;
+    const rotationValues = [
+        'rotateY(360deg)',   // Horizontal clockwise
+        'rotateY(0deg)',     // Horizontal anti-clockwise
+        'rotateX(360deg)',   // Vertical down
+        'rotateX(0deg)'      // Vertical up
+    ];
+
+    function applyRotation() {
+        cube.style.transform = rotationValues[currentStep % 4];
+        currentStep++;
+    }
+
+    cube.addEventListener('transitionend', function(event) {
+        if (event.propertyName === 'transform') {
+            applyRotation();
+        }
+    });
+
+    // Start the rotation sequence
+    setTimeout(applyRotation, 100);
+});
