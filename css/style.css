@@ -1638,3 +1638,103 @@ main hr {
     .cube-face-top { transform: rotateX(90deg) translateZ(calc(100px + 5vw)); }
     .cube-face-bottom { transform: rotateX(-90deg) translateZ(calc(100px + 5vw)); }
 }
+
+
+
+/* Horizontal sliders */
+.horizontal-section {
+    top: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: linear-gradient(98.26482936115595deg, #9747ff0f, #1b98d20f);
+    box-shadow: #c8e7ef 0px 0px 8px 2px;
+    margin-bottom: 150px;
+}
+
+.horizontal-section h1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Linear animation for smooth continuous scroll */
+.swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+.horizontal-section .swiper {
+    width: 100%;
+    height: 305px;
+    overflow: hidden; /* Crucial for slider containment */
+    flex: 0 0 auto;  /* take full width available (each on new row)  */
+}
+
+.horizontal-section .swiper-slide {
+    width: 135px;
+    height: 300px;
+}
+
+.horizontal-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid var(--silver);
+    box-shadow: 3px 3px 3px #c8e7ef;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+
+    .horizontal-slide {
+        width: 250px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .horizontal-slide {
+        width: 200px;
+        height: 120px;
+    }
+    .horizontal-section h1 {
+        font-size: 4.0rem;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .horizontal-section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .horizontal-section h1 {
+        font-size: 2.3rem;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin: 0;
+    }
+
+    .horizontal-section .swiper-slide {
+        width: 105px;
+        height: 270px;
+    }
+
+    .horizontal-section {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: 0;
+    }
+
+    .horizontal-section .swiper {
+        height: 275px;
+    }
+}

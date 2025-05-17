@@ -199,3 +199,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start the rotation sequence
     setTimeout(applyRotation, 100);
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const swiper1 = new Swiper('.swiper1', {
+        freeMode: true,
+        loop: true,
+        freeModeMomentum: false,
+        speed: 6000,
+        direction: 'horizontal',
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 'auto',
+        spaceBetween: 50,
+        allowTouchMove: false,
+        watchSlidesProgress: true,
+        resistanceRatio: 0 // Disable bounce effect
+    });
+
+    const swiper2 = new Swiper('.swiper2', {
+        freeMode: true,
+        loop: true,
+        freeModeMomentum: false,
+        speed: 6000,
+        direction: 'horizontal',
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: true 
+        },
+        slidesPerView: 'auto',
+        spaceBetween: 50,
+        allowTouchMove: false,
+        watchSlidesProgress: true,
+        resistanceRatio: 0 // Disable bounce effect
+    });
+});
